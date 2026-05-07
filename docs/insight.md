@@ -1,0 +1,11 @@
+Here's the single most important insight to carry into day one: define your data contract before writing any LLM code.
+
+Every bug in an agentic system traces back to ambiguous data — the classifier returned something the tool didn't expect, or a slot was partially filled, or a missing value got passed as None. The IntentResult Pydantic model shown above is your contract. The LLM must produce it. The tools must consume it. Everything else is plumbing.
+
+The thing that trips up most learners on this project is starting with the chatbot UI and working backwards. Don't. Start with a plain Python script that takes a sentence, calls the LLM, validates the JSON, and prints the result. Get that 100% solid before you add any conversational loop.
+
+Three concerns that don't show up enough in tutorials but will bite you:
+The session state problem is underestimated. A dict keyed to session_id sounds trivial, but you'll quickly discover edge cases — what happens when a user starts a new topic mid-conversation? What's the TTL on a session? What if two requests come in for the same session simultaneously? A simple SessionStore class with get, update, and expire methods, written before you need it, saves a lot of pain.
+
+The logging contract matters from day one. Every single input and output pair should land in a structured log (JSONL is perfect — one JSON object per line). This feels like overhead until the moment you need to debug why the agent misclassified something, or when you want to generate your BERT training set from real traffic. You cannot reconstruct what happened without it.
+The failure mode taxonomy should be written down, not improvised. There are exactly four things that can go wrong: low confidence (agent isn't sure what the user wants), missing slots (agent knows the intent but lacks parameters), dangerous action (agent has all parameters but needs authorization), and tool failure (the API returned an error). Each needs a distinct response path. If you don't design these upfront, you'll end up with a mess of if/else blocks that nobody can maintain.

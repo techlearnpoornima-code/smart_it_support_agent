@@ -1,0 +1,15 @@
+# Runtime dependencies — mirrors pyproject.toml [project.dependencies]
+anthropic>=0.40.0
+openai>=1.0.0
+pydantic>=2.13.3
+python-dotenv>=1.2.1
+requests>=2.33.1
+rich>=15.0.0
+beautifulsoup4>=4.14.3
+
+# Test dependencies
+pytest>=8.4.2
+pytest-asyncio>=1.2.0
+
+# Dev / lint
+ruff>=0.15.12

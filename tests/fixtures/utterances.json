@@ -1,0 +1,42 @@
+[
+  {"intent": "reset_password", "text": "I can't log into my email", "expected_slots": {"system_name": "email"}},
+  {"intent": "reset_password", "text": "Reset my VPN password please", "expected_slots": {"system_name": "VPN"}},
+  {"intent": "reset_password", "text": "I'm locked out of Slack", "expected_slots": {"system_name": "Slack"}},
+  {"intent": "reset_password", "text": "My Office 365 password expired", "expected_slots": {"system_name": "Office 365"}},
+  {"intent": "reset_password", "text": "Can you reset my password for the HR portal?", "expected_slots": {"system_name": "HR portal"}},
+  {"intent": "reset_password", "text": "I need to reset my Slack password", "expected_slots": {"system_name": "Slack"}},
+  {"intent": "reset_password", "text": "Password reset for Jira please", "expected_slots": {"system_name": "Jira"}},
+
+  {"intent": "check_leave", "text": "How many sick days do I have?", "expected_slots": {"leave_type": "sick"}},
+  {"intent": "check_leave", "text": "What's my vacation balance?", "expected_slots": {"leave_type": "vacation"}},
+  {"intent": "check_leave", "text": "Can I check my leave entitlement?", "expected_slots": {}},
+  {"intent": "check_leave", "text": "How much PTO do I have left this year?", "expected_slots": {"leave_type": "vacation"}},
+  {"intent": "check_leave", "text": "Am I entitled to more leave?", "expected_slots": {}},
+  {"intent": "check_leave", "text": "How many days of annual leave do I have left?", "expected_slots": {"leave_type": "vacation"}},
+  {"intent": "check_leave", "text": "How much maternity leave do I have remaining?", "expected_slots": {"leave_type": "maternity"}},
+
+  {"intent": "software_request", "text": "I need Figma installed on my laptop", "expected_slots": {"software_name": "Figma"}},
+  {"intent": "software_request", "text": "Can I get access to GitHub Copilot?", "expected_slots": {"software_name": "GitHub Copilot"}},
+  {"intent": "software_request", "text": "Request Adobe Acrobat for my machine", "expected_slots": {"software_name": "Adobe Acrobat"}},
+  {"intent": "software_request", "text": "I need a licence for IntelliJ IDEA", "expected_slots": {"software_name": "IntelliJ IDEA"}},
+  {"intent": "software_request", "text": "Can you get me Zoom Pro?", "expected_slots": {"software_name": "Zoom Pro"}},
+
+  {"intent": "policy_lookup", "text": "What's the remote work policy?", "expected_slots": {"topic": "remote work"}},
+  {"intent": "policy_lookup", "text": "How many days notice for annual leave?", "expected_slots": {"topic": "annual leave notice"}},
+  {"intent": "policy_lookup", "text": "What's the BYOD policy?", "expected_slots": {"topic": "BYOD"}},
+  {"intent": "policy_lookup", "text": "What is the acceptable use policy for company devices?", "expected_slots": {"topic": "acceptable use"}},
+  {"intent": "policy_lookup", "text": "Is personal use of work laptop allowed?", "expected_slots": {"topic": "personal use of work laptop"}},
+  {"intent": "policy_lookup", "text": "What is the maternity leave policy?", "expected_slots": {"topic": "maternity leave"}},
+  {"intent": "policy_lookup", "text": "How long is paternity leave?", "expected_slots": {"topic": "paternity leave"}},
+  {"intent": "policy_lookup", "text": "How many days maternity leave?", "expected_slots": {"topic": "maternity leave"}},
+  {"intent": "policy_lookup", "text": "How many weeks of paternity leave do employees get?", "expected_slots": {"topic": "paternity leave"}},
+  {"intent": "policy_lookup", "text": "What is the sick leave allowance per year?", "expected_slots": {"topic": "sick leave allowance"}},
+  {"intent": "policy_lookup", "text": "Can I carry over unused annual leave to next year?", "expected_slots": {"topic": "annual leave carry-over"}},
+  {"intent": "policy_lookup", "text": "How many days annual leave are new employees entitled to?", "expected_slots": {"topic": "annual leave entitlement"}},
+
+  {"intent": "hardware_issue", "text": "My monitor isn't working", "expected_slots": {"description": "monitor not working"}},
+  {"intent": "hardware_issue", "text": "The keyboard on my MacBook is broken", "expected_slots": {"description": "keyboard broken"}},
+  {"intent": "hardware_issue", "text": "My docking station won't connect", "expected_slots": {"description": "docking station connectivity issue"}},
+  {"intent": "hardware_issue", "text": "Laptop battery drains in 30 minutes", "expected_slots": {"description": "battery draining fast"}},
+  {"intent": "hardware_issue", "text": "My webcam isn't detected", "expected_slots": {"description": "webcam not detected"}}
+]
